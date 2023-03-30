@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
+            this.time = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -38,6 +39,7 @@
             this.tbADA = new System.Windows.Forms.TextBox();
             this.bntY = new System.Windows.Forms.Button();
             this.btnN = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -58,16 +60,15 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
             this.dateTimePicker1.TabIndex = 1;
             // 
-            // label2
+            // time
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Nexa Text-Trial Book", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(65)))), ((int)(((byte)(87)))));
-            this.label2.Location = new System.Drawing.Point(679, 368);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(206, 42);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "12:05:45 AM";
+            this.time.AutoSize = true;
+            this.time.Font = new System.Drawing.Font("Nexa Text-Trial Book", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.time.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(65)))), ((int)(((byte)(87)))));
+            this.time.Location = new System.Drawing.Point(679, 368);
+            this.time.Name = "time";
+            this.time.Size = new System.Drawing.Size(0, 42);
+            this.time.TabIndex = 2;
             // 
             // label3
             // 
@@ -130,6 +131,7 @@
             this.bntY.TabIndex = 8;
             this.bntY.Text = "YES";
             this.bntY.UseVisualStyleBackColor = false;
+            this.bntY.Click += new System.EventHandler(this.bntY_Click);
             // 
             // btnN
             // 
@@ -143,6 +145,11 @@
             this.btnN.TabIndex = 9;
             this.btnN.Text = "NO";
             this.btnN.UseVisualStyleBackColor = false;
+            this.btnN.Click += new System.EventHandler(this.btnN_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // CardInformation
             // 
@@ -156,11 +163,12 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.time);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label1);
             this.Name = "CardInformation";
             this.Text = "CardInformation";
+            this.Load += new System.EventHandler(this.CardInformation_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,7 +178,7 @@
 
         private Label label1;
         private DateTimePicker dateTimePicker1;
-        private Label label2;
+        private Label time;
         private Label label3;
         private Label label4;
         private Label label5;
@@ -178,5 +186,6 @@
         private TextBox tbADA;
         private Button bntY;
         private Button btnN;
+        private System.Windows.Forms.Timer timer1;
     }
 }

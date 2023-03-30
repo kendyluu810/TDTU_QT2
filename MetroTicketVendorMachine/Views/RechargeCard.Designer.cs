@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RechargeCard));
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.time = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -47,16 +49,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "WELCOME TO HCM METRO";
             // 
-            // label2
+            // time
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Nexa Text-Trial Book", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(65)))), ((int)(((byte)(87)))));
-            this.label2.Location = new System.Drawing.Point(653, 356);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(206, 42);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "12:05:45 AM";
+            this.time.AutoSize = true;
+            this.time.Font = new System.Drawing.Font("Nexa Text-Trial Book", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.time.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(65)))), ((int)(((byte)(87)))));
+            this.time.Location = new System.Drawing.Point(653, 356);
+            this.time.Name = "time";
+            this.time.Size = new System.Drawing.Size(0, 42);
+            this.time.TabIndex = 1;
             // 
             // label3
             // 
@@ -83,6 +84,11 @@
             this.label4.Size = new System.Drawing.Size(417, 42);
             this.label4.TabIndex = 4;
             this.label4.Text = "PLEASE TAP YOUR CARD";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // RechargeCard
             // 
@@ -92,7 +98,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.time);
             this.Controls.Add(this.label1);
             this.Name = "RechargeCard";
             this.Text = "RechargeCard";
@@ -105,9 +111,10 @@
         #endregion
 
         private Label label1;
-        private Label label2;
+        private Label time;
         private Label label3;
         private DateTimePicker dateTimePicker1;
         private Label label4;
+        private System.Windows.Forms.Timer timer1;
     }
 }

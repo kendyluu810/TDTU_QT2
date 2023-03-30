@@ -1,0 +1,3 @@
+E:\CNPM\TDTU_QT2\MetroTicketVendorMachine\Controls\obj\Debug\Controls.csproj.AssemblyReference.cache
+E:\CNPM\TDTU_QT2\MetroTicketVendorMachine\Controls\obj\Debug\Controls.csproj.SuggestedBindingRedirects.cache
+E:\CNPM\TDTU_QT2\MetroTicketVendorMachine\Controls\obj\Debug\Controls.csproj.CoreCompileInputs.cache

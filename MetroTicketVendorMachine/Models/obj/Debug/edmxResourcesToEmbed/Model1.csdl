@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MetroTicketModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Customer_Card">
+    <Key>
+      <PropertyRef Name="CardId" />
+    </Key>
+    <Property Name="CardId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AmountOfDay" Type="Int32" />
+    <NavigationProperty Name="Purchases" Relationship="Self.FK__Purchase__CardId__3C69FB99" FromRole="Customer_Card" ToRole="Purchase" />
+  </EntityType>
+  <EntityType Name="PriceOfTicket">
+    <Key>
+      <PropertyRef Name="TId" />
+    </Key>
+    <Property Name="TId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TPrice" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="NumberOfDay" Type="Int32" />
+    <NavigationProperty Name="Purchases" Relationship="Self.FK__Purchase__TId__3B75D760" FromRole="PriceOfTicket" ToRole="Purchase" />
+  </EntityType>
+  <EntityType Name="Purchase">
+    <Key>
+      <PropertyRef Name="PId" />
+    </Key>
+    <Property Name="PId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TId" Type="Int32" Nullable="false" />
+    <Property Name="CardId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Customer_Card" Relationship="Self.FK__Purchase__CardId__3C69FB99" FromRole="Purchase" ToRole="Customer_Card" />
+    <NavigationProperty Name="PriceOfTicket" Relationship="Self.FK__Purchase__TId__3B75D760" FromRole="Purchase" ToRole="PriceOfTicket" />
+    <NavigationProperty Name="Ticket_Transaction" Relationship="Self.FK__Ticket_Tran__PId__3F466844" FromRole="Purchase" ToRole="Ticket_Transaction" />
+  </EntityType>
+  <EntityType Name="Ticket_Transaction">
+    <Key>
+      <PropertyRef Name="TransactionID" />
+    </Key>
+    <Property Name="TransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Price" Type="Double" />
+    <Property Name="Transaction_date" Type="DateTime" Precision="3" />
+    <Property Name="PId" Type="Int32" Nullable="false" />
+    <Property Name="Payment_method" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Purchase" Relationship="Self.FK__Ticket_Tran__PId__3F466844" FromRole="Ticket_Transaction" ToRole="Purchase" />
+  </EntityType>
+  <Association Name="FK__Purchase__CardId__3C69FB99">
+    <End Role="Customer_Card" Type="Self.Customer_Card" Multiplicity="1" />
+    <End Role="Purchase" Type="Self.Purchase" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer_Card">
+        <PropertyRef Name="CardId" />
+      </Principal>
+      <Dependent Role="Purchase">
+        <PropertyRef Name="CardId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Purchase__TId__3B75D760">
+    <End Role="PriceOfTicket" Type="Self.PriceOfTicket" Multiplicity="1" />
+    <End Role="Purchase" Type="Self.Purchase" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PriceOfTicket">
+        <PropertyRef Name="TId" />
+      </Principal>
+      <Dependent Role="Purchase">
+        <PropertyRef Name="TId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ticket_Tran__PId__3F466844">
+    <End Role="Purchase" Type="Self.Purchase" Multiplicity="1" />
+    <End Role="Ticket_Transaction" Type="Self.Ticket_Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Purchase">
+        <PropertyRef Name="PId" />
+      </Principal>
+      <Dependent Role="Ticket_Transaction">
+        <PropertyRef Name="PId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MetroTicketEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Customer_Card" EntityType="Self.Customer_Card" />
+    <EntitySet Name="PriceOfTickets" EntityType="Self.PriceOfTicket" />
+    <EntitySet Name="Purchases" EntityType="Self.Purchase" />
+    <EntitySet Name="Ticket_Transaction" EntityType="Self.Ticket_Transaction" />
+    <AssociationSet Name="FK__Purchase__CardId__3C69FB99" Association="Self.FK__Purchase__CardId__3C69FB99">
+      <End Role="Customer_Card" EntitySet="Customer_Card" />
+      <End Role="Purchase" EntitySet="Purchases" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Purchase__TId__3B75D760" Association="Self.FK__Purchase__TId__3B75D760">
+      <End Role="PriceOfTicket" EntitySet="PriceOfTickets" />
+      <End Role="Purchase" EntitySet="Purchases" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ticket_Tran__PId__3F466844" Association="Self.FK__Ticket_Tran__PId__3F466844">
+      <End Role="Purchase" EntitySet="Purchases" />
+      <End Role="Ticket_Transaction" EntitySet="Ticket_Transaction" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

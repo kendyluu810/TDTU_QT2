@@ -19,7 +19,20 @@ namespace Views
 
         private void RechargeCard_Load(object sender, EventArgs e)
         {
+            timer1.Start();
+        }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime t = DateTime.Now;
+            this.dateTimePicker1.Text = t.ToString("MMM/dd/yyyy");
+            this.time.Text = t.ToString("HH:mm:ss");
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            CardInformation ci = new CardInformation();
+            ci.Show();
         }
     }
 }

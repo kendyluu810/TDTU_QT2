@@ -1,0 +1,13 @@
+E:\CNPM\TDTU_QT2\MetroTicketVendorMachine\Models\bin\Debug\Models.exe.config
+E:\CNPM\TDTU_QT2\MetroTicketVendorMachine\Models\bin\Debug\Models.exe
+E:\CNPM\TDTU_QT2\MetroTicketVendorMachine\Models\bin\Debug\Models.pdb
+E:\CNPM\TDTU_QT2\MetroTicketVendorMachine\Models\bin\Debug\EntityFramework.dll
+E:\CNPM\TDTU_QT2\MetroTicketVendorMachine\Models\bin\Debug\EntityFramework.SqlServer.dll
+E:\CNPM\TDTU_QT2\MetroTicketVendorMachine\Models\bin\Debug\EntityFramework.xml
+E:\CNPM\TDTU_QT2\MetroTicketVendorMachine\Models\bin\Debug\EntityFramework.SqlServer.xml
+E:\CNPM\TDTU_QT2\MetroTicketVendorMachine\Models\obj\Debug\Models.csproj.AssemblyReference.cache
+E:\CNPM\TDTU_QT2\MetroTicketVendorMachine\Models\obj\Debug\Models.csproj.SuggestedBindingRedirects.cache
+E:\CNPM\TDTU_QT2\MetroTicketVendorMachine\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+E:\CNPM\TDTU_QT2\MetroTicketVendorMachine\Models\obj\Debug\Models.csproj.CopyComplete
+E:\CNPM\TDTU_QT2\MetroTicketVendorMachine\Models\obj\Debug\Models.exe
+E:\CNPM\TDTU_QT2\MetroTicketVendorMachine\Models\obj\Debug\Models.pdb

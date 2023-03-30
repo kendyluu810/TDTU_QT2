@@ -1,0 +1,47 @@
+CREATE DATABASE MetroTicket
+GO
+USE MetroTicket
+
+CREATE TABLE PriceOfTicket (
+	TId INT NOT NULL IDENTITY PRIMARY KEY,
+	TName NVARCHAR(200),
+	TPrice NVARCHAR(200),
+	NumberOfDay int
+)
+
+CREATE TABLE Customer_Card (
+	CardId INT NOT NULL IDENTITY PRIMARY KEY,
+	AmountOfDay int,
+)
+
+CREATE TABLE Purchase (
+	PId INT NOT NULL IDENTITY PRIMARY KEY,
+	TId INT NOT NULL FOREIGN KEY REFERENCES PriceOfTicket(TId),
+	CardId INT NOT NULL FOREIGN KEY REFERENCES Customer_Card(CardId)
+)
+
+CREATE TABLE Ticket_Transaction(
+	TransactionID INT NOT NULL IDENTITY PRIMARY KEY,
+	Price FLOAT,
+	Transaction_date DATETIME,
+	PId INT NOT NULL FOREIGN KEY REFERENCES Purchase (PId),
+	Payment_method NVARCHAR(200),
+)
+
+INSERT INTO PriceOfTicket VALUES ('1 Day','46000 VND',1)
+INSERT INTO PriceOfTicket VALUES ('3 Day', '104000 VND',3)
+INSERT INTO PriceOfTicket VALUES ('7 Day', '164000 VND',7)
+INSERT INTO PriceOfTicket VALUES ('31 Day', '320000 VND',31)
+
+SELECT * FROM PriceOfTicket
+SELECT * FROM Customer_Card
+SELECT * FROM Purchase
+SELECT * FROM Ticket_Transaction
+
+INSERT INTO Customer_Card VALUES ('')
+
+INSERT INTO Purchase VALUES (3,1)
+
+INSERT INTO Ticket_Transaction VALUES (164000,'2023-02-21',1,'QR-CODE')
+
+UPDATE Customer_Card SET AmountOfDay = 7 WHERE CardId = 1

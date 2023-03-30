@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\CNPM\\QT2\\MetroTicketVendorMachine\\Views\\Views.csproj",
+      "projectUniqueName": "E:\\CNPM\\TDTU_QT2\\MetroTicketVendorMachine\\Views\\Views.csproj",
       "projectName": "Views",
-      "projectPath": "E:\\CNPM\\QT2\\MetroTicketVendorMachine\\Views\\Views.csproj",
+      "projectPath": "E:\\CNPM\\TDTU_QT2\\MetroTicketVendorMachine\\Views\\Views.csproj",
       "packagesPath": "C:\\Users\\kendy\\.nuget\\packages\\",
-      "outputPath": "E:\\CNPM\\QT2\\MetroTicketVendorMachine\\Views\\obj\\",
+      "outputPath": "E:\\CNPM\\TDTU_QT2\\MetroTicketVendorMachine\\Views\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

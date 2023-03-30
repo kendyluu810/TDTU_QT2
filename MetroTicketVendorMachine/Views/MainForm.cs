@@ -16,5 +16,28 @@ namespace Views
         {
             InitializeComponent();
         }
+
+        private void btnBuy_Click(object sender, EventArgs e)
+        {
+            BuyCard buyCard= new BuyCard();
+            buyCard.Show();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime t = DateTime.Now;
+            this.time.Text = t.ToString("HH:mm:ss");
+        }
+
+        private void btnRecharge_Click(object sender, EventArgs e)
+        {
+            RechargeCard rc = new RechargeCard();
+            rc.Show();
+        }
     }
 }

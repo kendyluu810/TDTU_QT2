@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MetroTicketModelStoreContainer" CdmEntityContainer="MetroTicketEntities">
+    <EntitySetMapping Name="Customer_Card">
+      <EntityTypeMapping TypeName="MetroTicketModel.Customer_Card">
+        <MappingFragment StoreEntitySet="Customer_Card">
+          <ScalarProperty Name="CardId" ColumnName="CardId" />
+          <ScalarProperty Name="AmountOfDay" ColumnName="AmountOfDay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PriceOfTickets">
+      <EntityTypeMapping TypeName="MetroTicketModel.PriceOfTicket">
+        <MappingFragment StoreEntitySet="PriceOfTicket">
+          <ScalarProperty Name="TId" ColumnName="TId" />
+          <ScalarProperty Name="TName" ColumnName="TName" />
+          <ScalarProperty Name="TPrice" ColumnName="TPrice" />
+          <ScalarProperty Name="NumberOfDay" ColumnName="NumberOfDay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Purchases">
+      <EntityTypeMapping TypeName="MetroTicketModel.Purchase">
+        <MappingFragment StoreEntitySet="Purchase">
+          <ScalarProperty Name="PId" ColumnName="PId" />
+          <ScalarProperty Name="TId" ColumnName="TId" />
+          <ScalarProperty Name="CardId" ColumnName="CardId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ticket_Transaction">
+      <EntityTypeMapping TypeName="MetroTicketModel.Ticket_Transaction">
+        <MappingFragment StoreEntitySet="Ticket_Transaction">
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Transaction_date" ColumnName="Transaction_date" />
+          <ScalarProperty Name="PId" ColumnName="PId" />
+          <ScalarProperty Name="Payment_method" ColumnName="Payment_method" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

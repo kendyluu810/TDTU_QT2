@@ -14,4 +14,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Views
-build_property.ProjectDir = E:\CNPM\QT2\MetroTicketVendorMachine\Views\
+build_property.ProjectDir = E:\CNPM\TDTU_QT2\MetroTicketVendorMachine\Views\
